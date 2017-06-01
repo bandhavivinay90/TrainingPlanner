@@ -19,6 +19,37 @@ var config = {
 
 firebase.initializeApp(config);
 
+exports.createNewUser = functions.https.onRequest((request, response) => {
+
+  var email = request.body.email
+  var password = request.body.password
+  var name = request.body.name
+
+  console.log("Printing username recieved " + request.body.email);
+  console.log("Printing password recieved " + request.body.password);
+
+  const userCreation = firebase.auth().createUserWithEmailAndPassword(email,password)
+  userCreation.then(function(user){
+
+    // Add display name with the profile ...
+    var currentUser = firebase.auth().currentUser
+    const changeRequest = currentUser.updateProfile({displayName:name})
+    changeRequest.then(function(){
+      
+    }).catch(function(error){
+
+    })
+
+  }).catch(function(error){
+
+  })
+});
+
+// const sendVerificationEmail = (user) => {
+//   //Send verification email to the user ...
+//   user.
+// }
+
 exports.signIn = functions.https.onRequest((request, response) => {
 
   var email = request.body.email

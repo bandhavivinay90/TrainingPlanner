@@ -96,7 +96,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XxM-uM-AWc">
                                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="66"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compSc3" translatesAutoresizingMaskIntoConstraints="NO" id="n5X-eW-XsK">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n5X-eW-XsK">
                                                                             <rect key="frame" x="0.0" y="8" width="73" height="60"/>
                                                                         </imageView>
                                                                     </subviews>
@@ -263,6 +263,124 @@
             </objects>
             <point key="canvasLocation" x="2268" y="-222.63868065967017"/>
         </scene>
+        <!--Swift Basics-->
+        <scene sceneID="oU3-Hj-Cxy">
+            <objects>
+                <viewController storyboardIdentifier="TrainingDetail" id="gNI-XE-G3H" customClass="TrainingDetailViewController" customModule="TrainingPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1hL-Kb-57N"/>
+                        <viewControllerLayoutGuide type="bottom" id="R9V-mb-gJJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H1n-Ql-oJz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mlq-e0-yro">
+                                <rect key="frame" x="6" y="72" width="363" height="318"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Training Description :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uuw-cF-TPP">
+                                        <rect key="frame" x="9" y="8" width="209" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1U5-F3-jFI">
+                                        <rect key="frame" x="8" y="38" width="347" height="260"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">This is a beginner course on Swift that will provide you with the tools and skills necessary to develop an iOS App from scratch. By the end of this first course you will be able to demonstrate intermediate application of programming in Swift, the powerful new programming language for iOS. Guided by best practices you will become proficient with syntax, object oriented principles, memory management, functional concepts and more in programming with Swift. </string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96843274111675126" green="0.96843274111675126" blue="0.96843274111675126" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HGI-lC-xVK">
+                                <rect key="frame" x="0.0" y="612" width="375" height="55"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjj-NI-4Oc">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="55"/>
+                                        <color key="backgroundColor" red="0.42209047373100672" green="0.65283946700507611" blue="0.056901087915055201" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="I'M IN">
+                                            <color key="titleColor" red="0.96843274109999999" green="0.96843274109999999" blue="0.96843274109999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaH-ag-zQa">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="55"/>
+                                        <color key="backgroundColor" red="0.68892766497461921" green="0.083397503987835062" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Not Now">
+                                            <color key="titleColor" red="0.96843274109999999" green="0.96843274109999999" blue="0.96843274109999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Fpi-Gk-1Bl"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mcb-aX-Y72">
+                                <rect key="frame" x="6" y="422" width="363" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="marty-mcfly-512" translatesAutoresizingMaskIntoConstraints="NO" id="m1Z-d4-0Tk">
+                                        <rect key="frame" x="153" y="-24" width="57" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About Trainer :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msa-e8-NB4">
+                                        <rect key="frame" x="9" y="38" width="209" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hV2-td-86r">
+                                        <rect key="frame" x="9" y="77" width="67" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kmr-Sf-qlu">
+                                        <rect key="frame" x="10" y="114" width="67" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="John Mathew" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zen-4l-3vB">
+                                        <rect key="frame" x="92" y="77" width="263" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="iOS/Android Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEi-dC-LGb">
+                                        <rect key="frame" x="92" y="113" width="263" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96843274109999999" green="0.96843274109999999" blue="0.96843274109999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="R9V-mb-gJJ" firstAttribute="top" secondItem="HGI-lC-xVK" secondAttribute="bottom" id="GGl-77-yOM"/>
+                            <constraint firstItem="HGI-lC-xVK" firstAttribute="leading" secondItem="H1n-Ql-oJz" secondAttribute="leading" id="Psh-wA-Iaf"/>
+                            <constraint firstAttribute="trailing" secondItem="HGI-lC-xVK" secondAttribute="trailing" id="VWL-j5-WaT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Swift Basics" id="k3P-tR-17C"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R3g-uD-GNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4092" y="-223.53823088455775"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="aI6-X5-OwN">
             <objects>
@@ -340,8 +458,26 @@
             </objects>
             <point key="canvasLocation" x="1333.5999999999999" y="-198.35082458770617"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zEv-CQ-1nJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vBm-Uk-0hi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dgV-ZY-Wow">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gNI-XE-G3H" kind="relationship" relationship="rootViewController" id="uEN-zm-JpR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N3P-V8-cqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3152.8000000000002" y="-223.53823088455775"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="compSc3" width="16" height="16"/>
+        <image name="marty-mcfly-512" width="16" height="16"/>
     </resources>
 </document>

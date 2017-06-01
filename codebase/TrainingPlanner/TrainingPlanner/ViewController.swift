@@ -34,28 +34,28 @@ class ViewController: UIViewController {
         emailTextField.text = "bandhavi.vinay@sogeti.se"
         passwordTextField.text = "123456"
         if(((emailTextField.text) != nil) && (passwordTextField.text != nil)){
-//            Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-//                //            user?.sendEmailVerification(completion: { (error) in
-//                //                print(error)
-//                //            })
-//                //            print(user?.isEmailVerified)
-////                let changeRequest = user?.createProfileChangeRequest()
-////                changeRequest?.displayName = "Bandhavi Vinay"
-////                changeRequest?.commitChanges(completion: { (error) in
-////                    print(error)
-////                    print(user)
-////                    
-////                })
-//                if(user != nil){
-//                    //User returned successfully ...
-//                    self.performSegue(withIdentifier: "signInSegue", sender: sender)
-//                }
-//                else{
-//                    print(error?.localizedDescription)
-//                }
-//            }
+            Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+                //            user?.sendEmailVerification(completion: { (error) in
+                //                print(error)
+                //            })
+                //            print(user?.isEmailVerified)
+//                let changeRequest = user?.createProfileChangeRequest()
+//                changeRequest?.displayName = "Bandhavi Vinay"
+//                changeRequest?.commitChanges(completion: { (error) in
+//                    print(error)
+//                    print(user)
+//                    
+//                })
+                if(user != nil){
+                    //User returned successfully ...
+                    self.performSegue(withIdentifier: "signInSegue", sender: sender)
+                }
+                else{
+                    print(error?.localizedDescription)
+                }
+            }
             
-            NetworkManager.sharedNetworkManager.makePostRequest("")
+         //   NetworkManager.sharedNetworkManager.makePostRequest("")
             
             
         }

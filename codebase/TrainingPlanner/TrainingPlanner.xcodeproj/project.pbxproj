@@ -13,6 +13,7 @@
 		C15012A41ED303D3001E3062 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15012A31ED303D3001E3062 /* FirebaseManager.swift */; };
 		C15828931EDC0A66008F5FBE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15828921EDC0A66008F5FBE /* NetworkManager.swift */; };
 		C15828951EDC0AB5008F5FBE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15828941EDC0AB5008F5FBE /* Reachability.swift */; };
+		C158289C1EDFF988008F5FBE /* TrainingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C158289B1EDFF988008F5FBE /* TrainingDetailViewController.swift */; };
 		C1B9C0C51ED4164C00F48DCC /* TrainingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B9C0C41ED4164C00F48DCC /* TrainingCollectionViewCell.swift */; };
 		C1B9C0C71ED451FD00F48DCC /* TrainingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B9C0C61ED451FD00F48DCC /* TrainingTableViewCell.swift */; };
 		C1CBEE891ECDB6F8006967D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CBEE881ECDB6F8006967D8 /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 		C15012A31ED303D3001E3062 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		C15828921EDC0A66008F5FBE /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C15828941EDC0AB5008F5FBE /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		C158289B1EDFF988008F5FBE /* TrainingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingDetailViewController.swift; sourceTree = "<group>"; };
 		C1B9C0C41ED4164C00F48DCC /* TrainingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1B9C0C61ED451FD00F48DCC /* TrainingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingTableViewCell.swift; sourceTree = "<group>"; };
 		C1CBEE851ECDB6F8006967D8 /* TrainingPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainingPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C15828961EDDB941008F5FBE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		C15828981EDDB95D008F5FBE /* Training Listing */ = {
+			isa = PBXGroup;
+			children = (
+				C158289B1EDFF988008F5FBE /* TrainingDetailViewController.swift */,
+			);
+			name = "Training Listing";
+			sourceTree = "<group>";
+		};
+		C15828991EDDB968008F5FBE /* Add Training */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Add Training";
+			sourceTree = "<group>";
+		};
+		C158289A1EDDB99E008F5FBE /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C15828921EDC0A66008F5FBE /* NetworkManager.swift */,
+				C15828941EDC0AB5008F5FBE /* Reachability.swift */,
+				C15012A31ED303D3001E3062 /* FirebaseManager.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		C1CBEE7C1ECDB6F8006967D8 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +171,10 @@
 		C1CBEE871ECDB6F8006967D8 /* TrainingPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				C158289A1EDDB99E008F5FBE /* Utility */,
+				C15828991EDDB968008F5FBE /* Add Training */,
+				C15828981EDDB95D008F5FBE /* Training Listing */,
+				C15828961EDDB941008F5FBE /* Login */,
 				C1CBEEB61ECDB7FF006967D8 /* GoogleService-Info.plist */,
 				C1CBEE881ECDB6F8006967D8 /* AppDelegate.swift */,
 				C1CBEE8A1ECDB6F8006967D8 /* ViewController.swift */,
@@ -146,11 +184,8 @@
 				C1CBEE941ECDB6F8006967D8 /* Info.plist */,
 				C150129F1ED30205001E3062 /* TrainingListViewController.swift */,
 				C15012A11ED30242001E3062 /* CreateTrainingViewController.swift */,
-				C15012A31ED303D3001E3062 /* FirebaseManager.swift */,
 				C1B9C0C41ED4164C00F48DCC /* TrainingCollectionViewCell.swift */,
 				C1B9C0C61ED451FD00F48DCC /* TrainingTableViewCell.swift */,
-				C15828921EDC0A66008F5FBE /* NetworkManager.swift */,
-				C15828941EDC0AB5008F5FBE /* Reachability.swift */,
 			);
 			path = TrainingPlanner;
 			sourceTree = "<group>";
@@ -360,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1B9C0C51ED4164C00F48DCC /* TrainingCollectionViewCell.swift in Sources */,
+				C158289C1EDFF988008F5FBE /* TrainingDetailViewController.swift in Sources */,
 				C15012A21ED30242001E3062 /* CreateTrainingViewController.swift in Sources */,
 				C1CBEE8B1ECDB6F8006967D8 /* ViewController.swift in Sources */,
 				C15012A41ED303D3001E3062 /* FirebaseManager.swift in Sources */,

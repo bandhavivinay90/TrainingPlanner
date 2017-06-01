@@ -20,6 +20,8 @@ class TrainingListViewController: UIViewController,UITableViewDataSource, UITabl
 //        trainingTableView.isEditing = true
         // Do any additional setup after loading the view.
         NetworkManager.sharedNetworkManager.makeGetRequest("")
+        trainingTableView.allowsSelection = true
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,11 +47,28 @@ class TrainingListViewController: UIViewController,UITableViewDataSource, UITabl
         return cell
     }
     
-    private func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .delete {
-            
-        }
+//    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//        if editingStyle == .delete {
+//            
+//        }
+//    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.hidesBottomBarWhenPushed = true;
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let trainingDetailsViewController = storyboard.instantiateViewController(withIdentifier:"TrainingDetail") as! TrainingDetailViewController
+        self.navigationController?.pushViewController(trainingDetailsViewController, animated: true)
+
+        
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+//        
+//        
+//    }
     
     
     /*
