@@ -29,6 +29,8 @@ class TrainingListViewController: UIViewController,UITableViewDataSource, UITabl
         // Dispose of any resources that can be recreated.
     }
     
+   
+    
 
     //MARK: UITableView Datasource & Delegates
     

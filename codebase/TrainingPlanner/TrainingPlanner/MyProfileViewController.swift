@@ -1,5 +1,5 @@
 //
-//  TrainingDetailViewController.swift
+//  MyProfileViewController.swift
 //  TrainingPlanner
 //
 //  Created by Bandhavi on 2017-06-01.
@@ -8,8 +8,12 @@
 
 import UIKit
 
-class TrainingDetailViewController: UIViewController {
+class MyProfileViewController: UIViewController {
 
+    @IBOutlet weak var trainingTableView:UITableView!
+    let reuseIdentifier = "CreateCell"
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,10 +25,21 @@ class TrainingDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        
+        return cell
+    }
+    
+    
     /*
     // MARK: - Navigation
 

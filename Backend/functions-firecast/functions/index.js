@@ -21,34 +21,52 @@ firebase.initializeApp(config);
 
 exports.createNewUser = functions.https.onRequest((request, response) => {
 
-  var email = request.body.email
+  var emailID = request.body.email
   var password = request.body.password
   var name = request.body.name
+  var shortDescription = request.body.shortDescription
+
+console.log(emailID)
+console.log(password)
 
   console.log("Printing username recieved " + request.body.email);
   console.log("Printing password recieved " + request.body.password);
 
-  const userCreation = firebase.auth().createUserWithEmailAndPassword(email,password)
-  userCreation.then(function(user){
+  const userCreation = firebase.auth().createUserWithEmailAndPassword(emailID, password)
+  userCreation.then(function (user) {
 
-    // Add display name with the profile ...
     var currentUser = firebase.auth().currentUser
-    const changeRequest = currentUser.updateProfile({displayName:name})
-    changeRequest.then(function(){
-      
+
+    currentUser.sendEmailVerification()
+
+    //Send a verification email to the user ...
+
+    //Add the user in the json tree ...
+
+    admin.database().ref('users/' + currentUser.uid).set({
+      name: name,
+      email: emailID,
+      description: shortDescription
+    }).then(function(abcd){
+      console.log("Inside success"+abcd)
+      response.status(200).send(currentUser.uid)
     }).catch(function(error){
-
+      console.log("Failed to create new entry in database"+error)
+      response.status(401).send(error)
     })
+    
+    // const changeRequest = currentUser.updateProfile({displayName:name})
+    // changeRequest.then(function () {
 
-  }).catch(function(error){
+    // }).catch(function (error) {
 
+    // })
+
+  }).catch(function (error) {
+    response.status(401).send(error)
   })
 });
 
-// const sendVerificationEmail = (user) => {
-//   //Send verification email to the user ...
-//   user.
-// }
 
 exports.signIn = functions.https.onRequest((request, response) => {
 
@@ -61,6 +79,11 @@ exports.signIn = functions.https.onRequest((request, response) => {
   firebase.auth().signInWithEmailAndPassword(email, password).then(function (firebaseUser) {
     // Success 
     console.log("user signed in successfully " + firebaseUser);
+
+    if(firebaseUser.isEmailVerified){
+      
+    }
+
     response.status(200).send(firebaseUser);
   }).catch(function (error) {
     // Handle Errors here.
