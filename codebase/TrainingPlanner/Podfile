@@ -8,4 +8,5 @@ target 'TrainingPlanner' do
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
     pod 'UICircularProgressRing'
+    pod 'AlamofireImage', '~> 3.1'
 end

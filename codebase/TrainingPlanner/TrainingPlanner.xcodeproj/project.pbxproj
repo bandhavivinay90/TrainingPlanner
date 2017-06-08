@@ -16,10 +16,16 @@
 		C158289C1EDFF988008F5FBE /* TrainingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C158289B1EDFF988008F5FBE /* TrainingDetailViewController.swift */; };
 		C158289F1EE023AA008F5FBE /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C158289E1EE023AA008F5FBE /* MyProfileViewController.swift */; };
 		C15828A81EE7DA4E008F5FBE /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15828A71EE7DA4E008F5FBE /* Utility.swift */; };
+		C15828B11EE7E548008F5FBE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15828B01EE7E548008F5FBE /* Constants.swift */; };
+		C15828B31EE7E9D0008F5FBE /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15828B21EE7E9D0008F5FBE /* AlamofireManager.swift */; };
+		C15828B61EE7ED43008F5FBE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15828B51EE7ED43008F5FBE /* LoginViewModel.swift */; };
+		C15828BB1EE7F31F008F5FBE /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15828BA1EE7F31F008F5FBE /* UserRequest.swift */; };
+		C15828BD1EE7F3EB008F5FBE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15828BC1EE7F3EB008F5FBE /* User.swift */; };
+		C15828C81EE936EB008F5FBE /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15828C71EE936EB008F5FBE /* String+Validation.swift */; };
 		C1B9C0C51ED4164C00F48DCC /* TrainingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B9C0C41ED4164C00F48DCC /* TrainingCollectionViewCell.swift */; };
 		C1B9C0C71ED451FD00F48DCC /* TrainingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B9C0C61ED451FD00F48DCC /* TrainingTableViewCell.swift */; };
 		C1CBEE891ECDB6F8006967D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CBEE881ECDB6F8006967D8 /* AppDelegate.swift */; };
-		C1CBEE8B1ECDB6F8006967D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CBEE8A1ECDB6F8006967D8 /* ViewController.swift */; };
+		C1CBEE8B1ECDB6F8006967D8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CBEE8A1ECDB6F8006967D8 /* LoginViewController.swift */; };
 		C1CBEE8E1ECDB6F8006967D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1CBEE8C1ECDB6F8006967D8 /* Main.storyboard */; };
 		C1CBEE901ECDB6F8006967D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1CBEE8F1ECDB6F8006967D8 /* Assets.xcassets */; };
 		C1CBEE931ECDB6F8006967D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1CBEE911ECDB6F8006967D8 /* LaunchScreen.storyboard */; };
@@ -56,11 +62,17 @@
 		C158289B1EDFF988008F5FBE /* TrainingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingDetailViewController.swift; sourceTree = "<group>"; };
 		C158289E1EE023AA008F5FBE /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		C15828A71EE7DA4E008F5FBE /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		C15828B01EE7E548008F5FBE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C15828B21EE7E9D0008F5FBE /* AlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
+		C15828B51EE7ED43008F5FBE /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C15828BA1EE7F31F008F5FBE /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
+		C15828BC1EE7F3EB008F5FBE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C15828C71EE936EB008F5FBE /* String+Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
 		C1B9C0C41ED4164C00F48DCC /* TrainingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1B9C0C61ED451FD00F48DCC /* TrainingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingTableViewCell.swift; sourceTree = "<group>"; };
 		C1CBEE851ECDB6F8006967D8 /* TrainingPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainingPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1CBEE881ECDB6F8006967D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C1CBEE8A1ECDB6F8006967D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C1CBEE8A1ECDB6F8006967D8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C1CBEE8D1ECDB6F8006967D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1CBEE8F1ECDB6F8006967D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1CBEE921ECDB6F8006967D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,6 +133,9 @@
 		C15828961EDDB941008F5FBE /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				C1CBEE8A1ECDB6F8006967D8 /* LoginViewController.swift */,
+				C15828B51EE7ED43008F5FBE /* LoginViewModel.swift */,
+				C15828BC1EE7F3EB008F5FBE /* User.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -143,10 +158,13 @@
 		C158289A1EDDB99E008F5FBE /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				C15828C61EE936C4008F5FBE /* Extensions */,
 				C15828921EDC0A66008F5FBE /* NetworkManager.swift */,
 				C15828941EDC0AB5008F5FBE /* Reachability.swift */,
 				C15012A31ED303D3001E3062 /* FirebaseManager.swift */,
 				C15828A71EE7DA4E008F5FBE /* Utility.swift */,
+				C15828B01EE7E548008F5FBE /* Constants.swift */,
+				C15828B21EE7E9D0008F5FBE /* AlamofireManager.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -157,6 +175,22 @@
 				C158289E1EE023AA008F5FBE /* MyProfileViewController.swift */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		C15828B91EE7F2EB008F5FBE /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				C15828BA1EE7F31F008F5FBE /* UserRequest.swift */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		C15828C61EE936C4008F5FBE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C15828C71EE936EB008F5FBE /* String+Validation.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		C1CBEE7C1ECDB6F8006967D8 = {
@@ -184,6 +218,7 @@
 		C1CBEE871ECDB6F8006967D8 /* TrainingPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				C15828B91EE7F2EB008F5FBE /* Requests */,
 				C158289D1EE02393008F5FBE /* Profile */,
 				C158289A1EDDB99E008F5FBE /* Utility */,
 				C15828991EDDB968008F5FBE /* Add Training */,
@@ -191,7 +226,6 @@
 				C15828961EDDB941008F5FBE /* Login */,
 				C1CBEEB61ECDB7FF006967D8 /* GoogleService-Info.plist */,
 				C1CBEE881ECDB6F8006967D8 /* AppDelegate.swift */,
-				C1CBEE8A1ECDB6F8006967D8 /* ViewController.swift */,
 				C1CBEE8C1ECDB6F8006967D8 /* Main.storyboard */,
 				C1CBEE8F1ECDB6F8006967D8 /* Assets.xcassets */,
 				C1CBEE911ECDB6F8006967D8 /* LaunchScreen.storyboard */,
@@ -410,15 +444,21 @@
 			files = (
 				C1B9C0C51ED4164C00F48DCC /* TrainingCollectionViewCell.swift in Sources */,
 				C158289C1EDFF988008F5FBE /* TrainingDetailViewController.swift in Sources */,
+				C15828BB1EE7F31F008F5FBE /* UserRequest.swift in Sources */,
 				C15012A21ED30242001E3062 /* CreateTrainingViewController.swift in Sources */,
-				C1CBEE8B1ECDB6F8006967D8 /* ViewController.swift in Sources */,
+				C1CBEE8B1ECDB6F8006967D8 /* LoginViewController.swift in Sources */,
 				C158289F1EE023AA008F5FBE /* MyProfileViewController.swift in Sources */,
 				C15012A41ED303D3001E3062 /* FirebaseManager.swift in Sources */,
+				C15828BD1EE7F3EB008F5FBE /* User.swift in Sources */,
 				C15828931EDC0A66008F5FBE /* NetworkManager.swift in Sources */,
+				C15828C81EE936EB008F5FBE /* String+Validation.swift in Sources */,
+				C15828B11EE7E548008F5FBE /* Constants.swift in Sources */,
+				C15828B61EE7ED43008F5FBE /* LoginViewModel.swift in Sources */,
 				C15828951EDC0AB5008F5FBE /* Reachability.swift in Sources */,
 				C15828A81EE7DA4E008F5FBE /* Utility.swift in Sources */,
 				C1CBEE891ECDB6F8006967D8 /* AppDelegate.swift in Sources */,
 				C1B9C0C71ED451FD00F48DCC /* TrainingTableViewCell.swift in Sources */,
+				C15828B31EE7E9D0008F5FBE /* AlamofireManager.swift in Sources */,
 				C15012A01ED30205001E3062 /* TrainingListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

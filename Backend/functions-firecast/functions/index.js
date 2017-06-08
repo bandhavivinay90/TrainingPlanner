@@ -80,11 +80,39 @@ exports.signIn = functions.https.onRequest((request, response) => {
     // Success 
     console.log("user signed in successfully " + firebaseUser);
 
-    if(firebaseUser.isEmailVerified){
-      
-    }
+    // if(firebaseUser.isEmailVerified){
+      console.log("Email is verified "+firebaseUser.isEmailVerified)
 
-    response.status(200).send(firebaseUser);
+      //Collect more information about the user from the database ...
+      admin.database().ref('users/' + firebaseUser.uid).once('value').then(function(snapshot) {
+
+        console.log("Entered inside database access then")
+
+        var userSnapshot = snapshot.val()
+        console.log(snapshot)
+        // ...
+        var userDictionary = {
+          "uid": firebaseUser.uid,
+           "fullName": userSnapshot.name,
+           "description":userSnapshot.description,
+           "emailID":firebaseUser.email,
+           "imageURL":null
+        }
+        response.status(200).send(userDictionary)
+    }).catch(function(error){
+      console.log("Entered inside error")
+      var errorCode = error.code;
+       var errorMessage = error.message;
+       console.log("Error recieved " + errorMessage);
+      response.status(errorCode).send(errorMessage)
+    })
+      
+    // }
+    // else{
+    //   console.log("Email is not verified")
+    //   response.status(403).send("Your email id is not verified yet")
+    // }
+    
   }).catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
