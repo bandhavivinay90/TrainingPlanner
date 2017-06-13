@@ -12,11 +12,11 @@ import SwiftKeychainWrapper
 class TrainingListViewController: UIViewController {
     
     @IBOutlet weak var trainingTableView:UITableView!
-    var trainingDataSource:[Training] = [Training](){
-        didSet{
-            self.reloadTableData()
-        }
-    }
+    //    var trainingDataSource:[Training] = [Training](){
+    //        didSet{
+    //            self.reloadTableData()
+    //        }
+    //    }
     var trainingViewModel:TrainingViewModel?
     private var trainingTableViewDataSource:TrainingTableViewDataSource?
     
@@ -39,15 +39,25 @@ class TrainingListViewController: UIViewController {
         trainingViewModel = TrainingViewModel(
             responseCallback: {
                 (trainings : [Training]) in
-                    self.trainingDataSource = trainings
+                self.trainingTableViewDataSource = TrainingTableViewDataSource(inTableView: self.trainingTableView, inDataSource: trainings)
+                
+                self.trainingTableViewDataSource?.selectedItemAtIndex(callback: {
+                    indexPath in
+                    self.hidesBottomBarWhenPushed = true
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                    let trainingDetailsViewController = storyboard.instantiateViewController(withIdentifier:"TrainingDetail") as! TrainingDetailViewController
+                    self.navigationController?.pushViewController(trainingDetailsViewController, animated: true)
+                    
+                })
+                
         })
         
     }
     
-    func reloadTableData(){
-      trainingTableViewDataSource = TrainingTableViewDataSource(inTableView: trainingTableView, inDataSource: trainingDataSource)
-    }
-    
+    //    func reloadTableData(){
+    //    }
     
     /*
      // MARK: - Navigation

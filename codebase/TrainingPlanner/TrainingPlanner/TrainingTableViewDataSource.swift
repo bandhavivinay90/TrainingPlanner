@@ -13,11 +13,8 @@ class TrainingTableViewDataSource: NSObject, UITableViewDataSource, UITableViewD
     var trainingDataSource:[Training] = [Training]()
     let reuseIdentifier = "TrainingCell"
 
-//    private var selectedCallback = ((NSIndexPath)->Void)?()
-//    
-//    func selectedItemAtIndex(callback:(NSIndexPath) -> Void) {
-//        selectedCallback = callback
-//    }
+    private var selectedCallback:((IndexPath)->())?
+    
     
     init(inTableView: UITableView,inDataSource:[Training]) {
         super.init()
@@ -25,6 +22,10 @@ class TrainingTableViewDataSource: NSObject, UITableViewDataSource, UITableViewD
         inTableView.delegate = self
         trainingDataSource = inDataSource
         inTableView.reloadData()
+    }
+    
+    func selectedItemAtIndex(callback:@escaping (IndexPath) -> ()) {
+        selectedCallback = callback
     }
     
     func configureCell(inTrainingViewCell:TrainingTableViewCell,inTrainingObj:Training){
@@ -66,14 +67,10 @@ class TrainingTableViewDataSource: NSObject, UITableViewDataSource, UITableViewD
     //    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-//        self.hidesBottomBarWhenPushed = true
-//        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        
-//        let trainingDetailsViewController = storyboard.instantiateViewController(withIdentifier:"TrainingDetail") as! TrainingDetailViewController
-//        self.navigationController?.pushViewController(trainingDetailsViewController, animated: true)
-        
+                
+        if let callback = selectedCallback {
+            callback(indexPath)
+        }
         
     }
     

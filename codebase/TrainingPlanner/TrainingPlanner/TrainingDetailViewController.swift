@@ -10,10 +10,15 @@ import UIKit
 
 class TrainingDetailViewController: UIViewController {
 
+    @IBOutlet weak var trainingDescriptionLabel:UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
+        trainingDescriptionLabel.text = "afjkas dsalkdlask dlaslaldklas kdlsa d"
+
     }
 
     override func didReceiveMemoryWarning() {
