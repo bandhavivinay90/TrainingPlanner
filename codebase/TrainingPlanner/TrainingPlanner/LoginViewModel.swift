@@ -8,10 +8,11 @@
 
 import UIKit
 
+
 class LoginViewModel: NSObject {
     
     init(inEmailId:String,inPassword:String,responseCallback:@escaping (User)->()){
-        UserRequest(urlString: Constants.Network.loginUserURL,parameters:["email":inEmailId,"password":inPassword]).signIn(
+        UserRequest(parameters:["email":inEmailId,"password":inPassword]).signIn(
             { (user:User) in
                 print("In View Model \(user)")
                 responseCallback(user)
@@ -29,7 +30,7 @@ class LoginViewModel: NSObject {
         let postDictionary = ["email":inNewUser.emailAddress,"password":inPassword,"fullName":inNewUser.fullName,"description":inNewUser.userDescription]
         
         
-        UserRequest(urlString: Constants.Network.loginUserURL,parameters:postDictionary as! [String : String]).registerUser(
+        UserRequest(parameters:postDictionary as! [String : String]).registerUser(
             { (user:User) in
                 
                 //New user created ...

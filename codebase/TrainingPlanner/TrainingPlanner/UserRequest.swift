@@ -8,14 +8,15 @@
 
 import Alamofire
 import UIKit
+import SwiftKeychainWrapper
 
 class UserRequest: NSObject {
     
     var request: DataRequest
     var apiUrl: String = AlamofireManager.sharedInstance.apiURLString
     
-    init(urlString:String,parameters:[String:String]) {
-        apiUrl += urlString
+    init(parameters:[String:String]) {
+        apiUrl += Constants.Network.loginUserURL
         request = AlamofireManager.sharedInstance.request(apiUrl,method: .post,parameters: parameters,encoding: URLEncoding.httpBody)
     }
     
@@ -32,12 +33,18 @@ class UserRequest: NSObject {
                     let statusCode = response.response?.statusCode
                     
                     if(statusCode == 200){
+                        
                         let responseString = String(data: response.data!, encoding: String.Encoding.utf8)
                         print("SignInResponse: \(responseString!)")
                         let JSON = try? JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.allowFragments)
                         let userDictionary = JSON as! [String : AnyObject]
                         print(userDictionary)
-                        let user:User = User(dict: userDictionary)
+                        let user:User = User(dict: userDictionary["user"] as! [String : AnyObject])
+                        let accessTokenString:String = userDictionary["accessToken"] as! String
+                        let refreshTokenString:String = userDictionary["refreshToken"] as! String
+                        //Save the access token and refresh token ...
+                        KeychainWrapper.standard.set(accessTokenString, forKey: "accessToken")
+                        KeychainWrapper.standard.set(refreshTokenString, forKey: "refreshToken")
                         success(user)
                     }
                     else{

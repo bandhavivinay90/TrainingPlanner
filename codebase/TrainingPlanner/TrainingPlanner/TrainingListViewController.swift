@@ -7,80 +7,56 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
-class TrainingListViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
-
-    @IBOutlet weak var trainingTableView:UITableView!
-    let reuseIdentifier = "TrainingCell"
-    var trainingDataSource:NSMutableArray?
+class TrainingListViewController: UIViewController {
     
+    @IBOutlet weak var trainingTableView:UITableView!
+    var trainingDataSource:[Training] = [Training](){
+        didSet{
+            self.reloadTableData()
+        }
+    }
+    var trainingViewModel:TrainingViewModel?
+    private var trainingTableViewDataSource:TrainingTableViewDataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        trainingTableView.isEditing = true
+        //        trainingTableView.isEditing = true
         // Do any additional setup after loading the view.
-        NetworkManager.sharedNetworkManager.makeGetRequest("")
+        getTrainingsData()
         trainingTableView.allowsSelection = true
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-   
-    
-
-    //MARK: UITableView Datasource & Delegates
-    
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! TrainingTableViewCell
-                
-        return cell
-    }
-    
-//    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//        if editingStyle == .delete {
-//            
-//        }
-//    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func getTrainingsData(){
         
-        self.hidesBottomBarWhenPushed = true;
-
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let trainingDetailsViewController = storyboard.instantiateViewController(withIdentifier:"TrainingDetail") as! TrainingDetailViewController
-        self.navigationController?.pushViewController(trainingDetailsViewController, animated: true)
-
+        trainingViewModel = TrainingViewModel(
+            responseCallback: {
+                (trainings : [Training]) in
+                    self.trainingDataSource = trainings
+        })
         
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-//        
-//        
-//    }
+    func reloadTableData(){
+      trainingTableViewDataSource = TrainingTableViewDataSource(inTableView: trainingTableView, inDataSource: trainingDataSource)
+    }
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftKeychainWrapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UICircularProgressRing.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -38,6 +43,16 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2305DDA94CE0D6D0D3BD9FFA20754797</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>80BB4E9785C1E163B0D4BA57CA61250D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,17 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B2D4A97A4C605B80BED2034920C6427E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E723A3B9DDE0C1112B9436414F7494FE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E8448F29021920873A7114177F045531</key>
 		<dict>
 			<key>primary</key>
 			<true/>

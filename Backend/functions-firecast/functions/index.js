@@ -26,8 +26,8 @@ exports.createNewUser = functions.https.onRequest((request, response) => {
   var name = request.body.name
   var shortDescription = request.body.shortDescription
 
-console.log(emailID)
-console.log(password)
+  console.log(emailID)
+  console.log(password)
 
   console.log("Printing username recieved " + request.body.email);
   console.log("Printing password recieved " + request.body.password);
@@ -47,14 +47,14 @@ console.log(password)
       name: name,
       email: emailID,
       description: shortDescription
-    }).then(function(abcd){
-      console.log("Inside success"+abcd)
+    }).then(function (abcd) {
+      console.log("Inside success" + abcd)
       response.status(200).send(currentUser.uid)
-    }).catch(function(error){
-      console.log("Failed to create new entry in database"+error)
+    }).catch(function (error) {
+      console.log("Failed to create new entry in database" + error)
       response.status(401).send(error)
     })
-    
+
     // const changeRequest = currentUser.updateProfile({displayName:name})
     // changeRequest.then(function () {
 
@@ -80,39 +80,46 @@ exports.signIn = functions.https.onRequest((request, response) => {
     // Success 
     console.log("user signed in successfully " + firebaseUser);
 
-    // if(firebaseUser.isEmailVerified){
-      console.log("Email is verified "+firebaseUser.isEmailVerified)
+    firebaseUser.getIdToken().then(function (token) {
+      console.log("Token check " + token);
+      // if(firebaseUser.isEmailVerified){
+      console.log("Email is verified " + firebaseUser.isEmailVerified)
 
       //Collect more information about the user from the database ...
-      admin.database().ref('users/' + firebaseUser.uid).once('value').then(function(snapshot) {
+      admin.database().ref('users/' + firebaseUser.uid).once('value').then(function (snapshot) {
 
-        console.log("Entered inside database access then")
-
+        console.log("Entered inside database access then" + firebaseUser.stsTokenManager)
+        console.log("Entered inside database access then" + firebaseUser)
         var userSnapshot = snapshot.val()
         console.log(snapshot)
-        // ...
+
         var userDictionary = {
-          "uid": firebaseUser.uid,
-           "fullName": userSnapshot.name,
-           "description":userSnapshot.description,
-           "emailID":firebaseUser.email,
-           "imageURL":null
+          user: {
+            "uid": firebaseUser.uid,
+            "fullName": userSnapshot.name,
+            "description": userSnapshot.description,
+            "emailID": firebaseUser.email,
+            "imageURL": null
+          },
+          "accessToken": token,
+          "refreshToken": firebaseUser.refreshToken
         }
         response.status(200).send(userDictionary)
-    }).catch(function(error){
+      })
+    }).catch(function (error) {
       console.log("Entered inside error")
       var errorCode = error.code;
-       var errorMessage = error.message;
-       console.log("Error recieved " + errorMessage);
+      var errorMessage = error.message;
+      console.log("Error recieved " + errorMessage);
       response.status(errorCode).send(errorMessage)
     })
-      
+
     // }
     // else{
     //   console.log("Email is not verified")
     //   response.status(403).send("Your email id is not verified yet")
     // }
-    
+
   }).catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -199,8 +206,27 @@ exports.getTrainings = functions.https.onRequest((request, response) => {
       // });
 
       rootRef.on("value", function (snapshot) {
-        console.log(snapshot.val());
-        response.status(200).send(snapshot.val())
+        console.log("Priniting objects ..." + snapshot);
+
+        //Build an array and add each training object as a dictionary ...
+        var trainingsArray = []
+          snapshot.forEach(function (childSnapshot) {
+            console.log("Inside for each"+snapshot)
+            var snapshotKey = childSnapshot.key;
+            // console.log(snapshotKey)
+            var childData = childSnapshot.val();
+            childData["trainingId"] = snapshotKey
+            // console.log(childData)
+            // console.log({key:childData})
+            // var trainingDictionary = {}
+            // trainingDictionary[snapshotKey] = childData
+            trainingsArray.push(childData)
+
+            // trainingsArray.push(childData)
+          });
+        console.log("Training Array "+trainingsArray)
+
+        response.status(200).send(trainingsArray)
       }, function (error) {
         console.log("Error: " + error.code);
       });
@@ -209,6 +235,8 @@ exports.getTrainings = functions.https.onRequest((request, response) => {
       response.status(401).send("Permission Denied. unauthorised access")
     }
   });
+
+
 
 
 });

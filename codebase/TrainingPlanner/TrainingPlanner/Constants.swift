@@ -12,7 +12,7 @@ struct Constants {
         static let baseURL = "https://us-central1-trainingplanner-691cc.cloudfunctions.net/"
         static let loginUserURL = "signIn"
         static let registrationURL = "register"
-//        static let signInURL = "signIn"
+        static let getTrainingsURL = "getTrainings"
 //        static let signInURL = "signIn"
 //        static let signInURL = "signIn"
     }

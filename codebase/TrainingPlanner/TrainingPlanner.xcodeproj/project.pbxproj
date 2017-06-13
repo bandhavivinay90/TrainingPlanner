@@ -22,6 +22,8 @@
 		C15828BB1EE7F31F008F5FBE /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15828BA1EE7F31F008F5FBE /* UserRequest.swift */; };
 		C15828BD1EE7F3EB008F5FBE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15828BC1EE7F3EB008F5FBE /* User.swift */; };
 		C15828C81EE936EB008F5FBE /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15828C71EE936EB008F5FBE /* String+Validation.swift */; };
+		C15828CE1EEABCE0008F5FBE /* GetTrainingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15828CD1EEABCE0008F5FBE /* GetTrainingsRequest.swift */; };
+		C15828D01EEABD2E008F5FBE /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15828CF1EEABD2E008F5FBE /* Training.swift */; };
 		C1B9C0C51ED4164C00F48DCC /* TrainingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B9C0C41ED4164C00F48DCC /* TrainingCollectionViewCell.swift */; };
 		C1B9C0C71ED451FD00F48DCC /* TrainingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B9C0C61ED451FD00F48DCC /* TrainingTableViewCell.swift */; };
 		C1CBEE891ECDB6F8006967D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CBEE881ECDB6F8006967D8 /* AppDelegate.swift */; };
@@ -32,6 +34,8 @@
 		C1CBEE9E1ECDB6F8006967D8 /* TrainingPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CBEE9D1ECDB6F8006967D8 /* TrainingPlannerTests.swift */; };
 		C1CBEEA91ECDB6F8006967D8 /* TrainingPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CBEEA81ECDB6F8006967D8 /* TrainingPlannerUITests.swift */; };
 		C1CBEEB71ECDB7FF006967D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1CBEEB61ECDB7FF006967D8 /* GoogleService-Info.plist */; };
+		C1DA31151EEE899B00F1FA7F /* TrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA31141EEE899B00F1FA7F /* TrainingViewModel.swift */; };
+		C1DA31171EEED6E800F1FA7F /* TrainingTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA31161EEED6E800F1FA7F /* TrainingTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,8 @@
 		C15828BA1EE7F31F008F5FBE /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		C15828BC1EE7F3EB008F5FBE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C15828C71EE936EB008F5FBE /* String+Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
+		C15828CD1EEABCE0008F5FBE /* GetTrainingsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTrainingsRequest.swift; sourceTree = "<group>"; };
+		C15828CF1EEABD2E008F5FBE /* Training.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
 		C1B9C0C41ED4164C00F48DCC /* TrainingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1B9C0C61ED451FD00F48DCC /* TrainingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingTableViewCell.swift; sourceTree = "<group>"; };
 		C1CBEE851ECDB6F8006967D8 /* TrainingPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainingPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +90,8 @@
 		C1CBEEA81ECDB6F8006967D8 /* TrainingPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingPlannerUITests.swift; sourceTree = "<group>"; };
 		C1CBEEAA1ECDB6F8006967D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1CBEEB61ECDB7FF006967D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C1DA31141EEE899B00F1FA7F /* TrainingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingViewModel.swift; sourceTree = "<group>"; };
+		C1DA31161EEED6E800F1FA7F /* TrainingTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingTableViewDataSource.swift; sourceTree = "<group>"; };
 		FF3B3EEFBAE7F7F86A1B0DD7 /* Pods-TrainingPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainingPlanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrainingPlanner/Pods-TrainingPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,7 +151,13 @@
 		C15828981EDDB95D008F5FBE /* Training Listing */ = {
 			isa = PBXGroup;
 			children = (
+				C1B9C0C41ED4164C00F48DCC /* TrainingCollectionViewCell.swift */,
+				C1B9C0C61ED451FD00F48DCC /* TrainingTableViewCell.swift */,
+				C150129F1ED30205001E3062 /* TrainingListViewController.swift */,
 				C158289B1EDFF988008F5FBE /* TrainingDetailViewController.swift */,
+				C15828CF1EEABD2E008F5FBE /* Training.swift */,
+				C1DA31141EEE899B00F1FA7F /* TrainingViewModel.swift */,
+				C1DA31161EEED6E800F1FA7F /* TrainingTableViewDataSource.swift */,
 			);
 			name = "Training Listing";
 			sourceTree = "<group>";
@@ -151,6 +165,7 @@
 		C15828991EDDB968008F5FBE /* Add Training */ = {
 			isa = PBXGroup;
 			children = (
+				C15012A11ED30242001E3062 /* CreateTrainingViewController.swift */,
 			);
 			name = "Add Training";
 			sourceTree = "<group>";
@@ -181,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				C15828BA1EE7F31F008F5FBE /* UserRequest.swift */,
+				C15828CD1EEABCE0008F5FBE /* GetTrainingsRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -230,10 +246,6 @@
 				C1CBEE8F1ECDB6F8006967D8 /* Assets.xcassets */,
 				C1CBEE911ECDB6F8006967D8 /* LaunchScreen.storyboard */,
 				C1CBEE941ECDB6F8006967D8 /* Info.plist */,
-				C150129F1ED30205001E3062 /* TrainingListViewController.swift */,
-				C15012A11ED30242001E3062 /* CreateTrainingViewController.swift */,
-				C1B9C0C41ED4164C00F48DCC /* TrainingCollectionViewCell.swift */,
-				C1B9C0C61ED451FD00F48DCC /* TrainingTableViewCell.swift */,
 			);
 			path = TrainingPlanner;
 			sourceTree = "<group>";
@@ -444,19 +456,23 @@
 			files = (
 				C1B9C0C51ED4164C00F48DCC /* TrainingCollectionViewCell.swift in Sources */,
 				C158289C1EDFF988008F5FBE /* TrainingDetailViewController.swift in Sources */,
+				C1DA31171EEED6E800F1FA7F /* TrainingTableViewDataSource.swift in Sources */,
 				C15828BB1EE7F31F008F5FBE /* UserRequest.swift in Sources */,
 				C15012A21ED30242001E3062 /* CreateTrainingViewController.swift in Sources */,
 				C1CBEE8B1ECDB6F8006967D8 /* LoginViewController.swift in Sources */,
 				C158289F1EE023AA008F5FBE /* MyProfileViewController.swift in Sources */,
 				C15012A41ED303D3001E3062 /* FirebaseManager.swift in Sources */,
 				C15828BD1EE7F3EB008F5FBE /* User.swift in Sources */,
+				C1DA31151EEE899B00F1FA7F /* TrainingViewModel.swift in Sources */,
 				C15828931EDC0A66008F5FBE /* NetworkManager.swift in Sources */,
+				C15828D01EEABD2E008F5FBE /* Training.swift in Sources */,
 				C15828C81EE936EB008F5FBE /* String+Validation.swift in Sources */,
 				C15828B11EE7E548008F5FBE /* Constants.swift in Sources */,
 				C15828B61EE7ED43008F5FBE /* LoginViewModel.swift in Sources */,
 				C15828951EDC0AB5008F5FBE /* Reachability.swift in Sources */,
 				C15828A81EE7DA4E008F5FBE /* Utility.swift in Sources */,
 				C1CBEE891ECDB6F8006967D8 /* AppDelegate.swift in Sources */,
+				C15828CE1EEABCE0008F5FBE /* GetTrainingsRequest.swift in Sources */,
 				C1B9C0C71ED451FD00F48DCC /* TrainingTableViewCell.swift in Sources */,
 				C15828B31EE7E9D0008F5FBE /* AlamofireManager.swift in Sources */,
 				C15012A01ED30205001E3062 /* TrainingListViewController.swift in Sources */,

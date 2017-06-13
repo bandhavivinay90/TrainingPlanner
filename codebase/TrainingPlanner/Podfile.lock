@@ -36,6 +36,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.9)
+  - SwiftKeychainWrapper (3.0.1)
   - UICircularProgressRing (1.4.3)
 
 DEPENDENCIES:
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - SwiftKeychainWrapper
   - UICircularProgressRing
 
 SPEC CHECKSUMS:
@@ -56,8 +58,9 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
+  SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
   UICircularProgressRing: f90123562efc555f861f9955384a3450e81e82c0
 
-PODFILE CHECKSUM: 13ae4843aa0eef7560b964b46a4bb04ba2dd5c48
+PODFILE CHECKSUM: c539011f95416ac04d61f62fb08f1b4aa7158c56
 
 COCOAPODS: 1.2.1

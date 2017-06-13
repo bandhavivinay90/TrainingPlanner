@@ -133,39 +133,30 @@ class LoginViewController: UIViewController {
     
     @IBAction func signIn(_ sender: AnyObject){
         
-        //        emailTextField.text = "bandhavi.vinay2010@gmail.com"
-        //        passwordTextField.text = "123456"
-        //        if(((emailTextField.text) != nil) && (passwordTextField.text != nil)){
-        //
-        //            loginViewModel = LoginViewModel(inEmailId: emailTextField.text!,inPassword: passwordTextField.text!,responseCallback: {(inUser:User) in
-        //
-        //                print(inUser)
-        //                if (inUser.emailAddress == self.emailTextField.text){
-        //                    //Proceed to the home screen ...
-        //                    print("Printing user's description - \(String(describing: inUser.userDescription))")
-        //                    self.performSegue(withIdentifier: "signInSegue", sender: sender)
-        //                }
-        //                else{
-        //                    Utility.showAlertPopUp(inTitle: "Error", inMessage: "Login Error", presentingController: self)
-        //                }
-        //
-        //            })
-        //
-        //
-        //        }
-        //        else{
-        //            print("Details empty")
-        //            Utility.showAlertPopUp(inTitle: "Missing Fields", inMessage: "Please fill in all the fields", presentingController: self)
-        //        }
+                emailTextField.text = "bandhavi.vinay2010@gmail.com"
+                passwordTextField.text = "123456"
+                if(((emailTextField.text) != nil) && (passwordTextField.text != nil)){
         
-        isRegistrationScreen = true
-        setProgrammableConstraints()
+                    loginViewModel = LoginViewModel(inEmailId: emailTextField.text!,inPassword: passwordTextField.text!,responseCallback: {(inUser:User) in
         
-        UIView.transition(with: containerView, duration: 1.0, options: UIViewAnimationOptions.transitionFlipFromRight, animations: {
-            self.registrationView.isHidden = false
-            self.loginView.isHidden = true
-            self.newUserRequestButton.isHidden = true
-        }, completion: nil)
+                        print(inUser)
+                        if (inUser.emailAddress == self.emailTextField.text){
+                            //Proceed to the home screen ...
+                            print("Printing user's description - \(String(describing: inUser.userDescription))")
+                            self.performSegue(withIdentifier: "signInSegue", sender: sender)
+                        }
+                        else{
+                            Utility.showAlertPopUp(inTitle: "Error", inMessage: "Login Error", presentingController: self)
+                        }
+        
+                    })
+
+                }
+                else{
+                    print("Details empty")
+                    Utility.showAlertPopUp(inTitle: "Missing Fields", inMessage: "Please fill in all the fields", presentingController: self)
+                }
+        
         
     }
     
@@ -173,21 +164,13 @@ class LoginViewController: UIViewController {
         
         if isRegistrationScreen && isLandscapeOrientation!{
             tempContainerViewContraintValue = containerViewAlignmentConstraint.constant
-            
+            // Shift the containerView's centerY towards the bottom so that it accomodates for the top padding while in landscape mode ...
             containerViewAlignmentConstraint.constant = (containerView.frame.origin.y)*(-1)
-            
         }
-        //        else{
-        //            if let tempValue = tempContainerViewContraintValue{
-        //                containerViewAlignmentConstraint.constant = tempValue
-        //            }
-        //        }
-        
         DispatchQueue.main.async {
             self.view.updateConstraints()
         }
 
-        
     }
     
     @IBAction func createNewUser(_ sender: AnyObject){

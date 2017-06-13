@@ -11,7 +11,9 @@ import UICircularProgressRing
 
 class TrainingTableViewCell: UITableViewCell {
 
-//    @IBOutlet weak var trainingTitleLabel:UILabel!
+    @IBOutlet weak var trainingTitleLabel:UILabel!
+    @IBOutlet weak var trainingAuthorLabel:UILabel!
+    @IBOutlet weak var trainingUpvotesNeedCountLabel:UILabel!
 //    @IBOutlet weak var holderView:UIView!
 //    @IBOutlet weak var courseImageView:UIImageView!
     @IBOutlet weak var circularProgressView:UICircularProgressRingView!

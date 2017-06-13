@@ -22,16 +22,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TrainingPlanner/LoginViewController.swift"
-            timestampString = "518646076.712167"
+            filePath = "TrainingPlanner/Training.swift"
+            timestampString = "519031052.055729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "setInitialState()"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "init(dict:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TrainingPlanner/LoginViewController.swift"
-            timestampString = "518646471.040972"
+            filePath = "TrainingPlanner/TrainingViewModel.swift"
+            timestampString = "518972352.185122"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
-            landmarkName = "updateContainerViewConstraints()"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "init(responseCallback:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TrainingPlanner/LoginViewController.swift"
-            timestampString = "518646532.469712"
+            filePath = "TrainingPlanner/TrainingTableViewDataSource.swift"
+            timestampString = "519033322.522466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "updateContainerViewConstraints()"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "configureCell(inTrainingViewCell:inTrainingObj:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
