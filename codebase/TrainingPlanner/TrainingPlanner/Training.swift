@@ -12,9 +12,13 @@ class Training: NSObject {
     
     var authorId: String?
     var trainingId: String!
+    var suggestedById: String?
     
     var trainingTitle: String!
     var trainingDescription: String?
+    
+    var suggestedByTitle: String?
+    var suggestedByIdDescription: String?
     
     var authorTitle: String?
     var authorDescription: String?
@@ -30,14 +34,22 @@ class Training: NSObject {
         self.authorId = dict["authorId"] as? String
         self.trainingId = dict["trainingId"] as? String
         self.trainingTitle = dict["trainingTitle"] as? String
-//        self.trainingDescription = dict["trainingDescription"] as? String
-//        self.authorDescription = dict["description"] as? String
         self.authorTitle = dict["author"] as? String
         self.category = dict["category"] as? String
         self.signedUpCount = dict["signedUpCount"] as? Int
-//        self.trainingMinutes = dict["trainingMinutes"] as? Int
         self.minSignUpCount = dict["minSignUpCount"] as? Int
+        self.suggestedByTitle = dict["suggestedBy"] as? String
         self.isSuggested = dict["isSuggested"] as? Bool
+    }
+    
+    func update(dict:[String : AnyObject]){
+        self.trainingDescription = dict["description"] as? String
+        self.authorDescription = dict["authorDesc"] as? String
+        self.trainingMinutes = dict["trainingMinutes"] as? Int
+        
+        self.suggestedByTitle = dict["suggestedByTitle"] as? String
+        self.suggestedByIdDescription = dict["suggestedByDescription"] as? String
+        
     }
     
     

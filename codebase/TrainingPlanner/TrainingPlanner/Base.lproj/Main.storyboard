@@ -507,7 +507,7 @@
                                                                                     <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 </userDefinedRuntimeAttribute>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                                                                    <real key="value" value="25"/>
+                                                                                    <real key="value" value="100"/>
                                                                                 </userDefinedRuntimeAttribute>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="value">
                                                                                     <real key="value" value="11"/>
@@ -580,6 +580,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="circularProgressView" destination="LWm-3A-vih" id="up9-5W-cP5"/>
+                                            <outlet property="courseImageView" destination="n5X-eW-XsK" id="0wj-hT-TmR"/>
                                             <outlet property="trainingAuthorLabel" destination="TrU-uj-F7J" id="ROa-KX-Vbk"/>
                                             <outlet property="trainingTitleLabel" destination="A0u-Fx-Xgq" id="ytI-Vx-Ue4"/>
                                             <outlet property="trainingUpvotesNeedCountLabel" destination="yKD-48-jxa" id="GrB-FB-2DF"/>
@@ -614,7 +615,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IxM-9c-ToV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3207.1999999999998" y="-222.63868065967017"/>
+            <point key="canvasLocation" x="3049" y="-287"/>
         </scene>
         <!--Swift Basics-->
         <scene sceneID="yhB-2p-Mgy">
@@ -657,15 +658,16 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="532"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4r-Pv-RYn">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="532"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="288.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INj-wa-OAJ">
-                                                <rect key="frame" x="6" y="361" width="362" height="142"/>
+                                                <rect key="frame" x="6" y="117.5" width="362" height="142"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marty-mcfly-512" translatesAutoresizingMaskIntoConstraints="NO" id="hWa-Gb-ocU">
                                                         <rect key="frame" x="153" y="-24" width="57" height="55.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="57" id="AeH-ed-xs7"/>
+                                                            <constraint firstAttribute="width" secondItem="hWa-Gb-ocU" secondAttribute="height" multiplier="57:55" id="o3J-B9-gkq"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Trainer :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fu5-az-jcA">
@@ -692,13 +694,13 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Mathew" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5g-2k-ICq">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5g-2k-ICq">
                                                         <rect key="frame" x="81" y="74.5" width="272" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS/Android Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLa-zF-L70">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLa-zF-L70">
                                                         <rect key="frame" x="81" y="106" width="272" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -731,7 +733,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42f-Us-sq2">
-                                                <rect key="frame" x="6" y="15" width="363" height="309"/>
+                                                <rect key="frame" x="6" y="15" width="363" height="65.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Training Description :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChK-Kw-6IN">
                                                         <rect key="frame" x="8" y="11" width="180" height="21.5"/>
@@ -739,15 +741,14 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ube-77-h3B">
-                                                        <rect key="frame" x="8" y="47.5" width="346" height="243.5"/>
-                                                        <string key="text">This is a beginner course on Swift that will provide you with the tools and skills necessary to develop an iOS App from scratch. By the end of this first course you will be able to demonstrate intermediate application of programming in Swift, the powerful new programming language for iOS. Guided by best practices you will become proficient with syntax, object oriented principles, memory management, functional concepts and more in programming with Swift. </string>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ube-77-h3B">
+                                                        <rect key="frame" x="8" y="47.5" width="346" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.5 hrs" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRE-hJ-hAk">
-                                                        <rect key="frame" x="302" y="11" width="50" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRE-hJ-hAk">
+                                                        <rect key="frame" x="268" y="11" width="84" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -803,7 +804,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Swift Basics" id="Onp-Mb-P6p"/>
                     <connections>
+                        <outlet property="authorDescriptionLabel" destination="xLa-zF-L70" id="Kh3-9Q-lkV"/>
+                        <outlet property="authorNameLabel" destination="k5g-2k-ICq" id="wji-CH-Jtd"/>
+                        <outlet property="trainingAuthorLabel" destination="Fu5-az-jcA" id="DPU-8q-Ufg"/>
                         <outlet property="trainingDescriptionLabel" destination="ube-77-h3B" id="MsU-Tc-GMS"/>
+                        <outlet property="trainingDurationLabel" destination="DRE-hJ-hAk" id="PiN-ZD-bP0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXp-rR-aRW" userLabel="First Responder" sceneMemberID="firstResponder"/>

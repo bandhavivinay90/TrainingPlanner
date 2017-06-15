@@ -11,8 +11,10 @@ struct Constants {
     struct Network{
         static let baseURL = "https://us-central1-trainingplanner-691cc.cloudfunctions.net/"
         static let loginUserURL = "signIn"
+        static let logoutUserURL = "signOut"
         static let registrationURL = "register"
         static let getTrainingsURL = "getTrainings"
+        static let getTrainingURL = "getTraining"
 //        static let signInURL = "signIn"
 //        static let signInURL = "signIn"
     }

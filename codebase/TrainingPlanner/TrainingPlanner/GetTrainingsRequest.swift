@@ -11,30 +11,16 @@ import Alamofire
 import UIKit
 import SwiftKeychainWrapper
 
-class GetTrainingsRequest: NSObject {
+class GetTrainingsRequest: RequestBuilder {
     
-    var request: DataRequest
     var apiUrl: String = AlamofireManager.sharedInstance.apiURLString
     
     init(authorizationFlag:Bool) {
         
         apiUrl += Constants.Network.getTrainingsURL
         
-        if(authorizationFlag){
-            //Make Header Dictionary :
-            let accessTokenString:String = KeychainWrapper.standard.string(forKey: "accessToken")!
-            
-            let headers = [
-                "Authorization": "Bearer \(accessTokenString)",
-                "Content-Type": "application/json"
-            ]
-            
-            request = AlamofireManager.sharedInstance.request(apiUrl,headers:headers)
-        }
-        else{
-            request = AlamofireManager.sharedInstance.request(apiUrl)
-        }
-        
+        super.init(authorizationFlag: authorizationFlag,inURL: apiUrl)
+
     }
     
     func getTrainings(_ success: @escaping ([Training]) -> Void, failure: @escaping (Error?) -> Void) {

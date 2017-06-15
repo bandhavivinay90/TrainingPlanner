@@ -13,7 +13,7 @@ class TrainingTableViewDataSource: NSObject, UITableViewDataSource, UITableViewD
     var trainingDataSource:[Training] = [Training]()
     let reuseIdentifier = "TrainingCell"
 
-    private var selectedCallback:((IndexPath)->())?
+    private var selectedCallback:((Training)->())?
     
     
     init(inTableView: UITableView,inDataSource:[Training]) {
@@ -24,7 +24,7 @@ class TrainingTableViewDataSource: NSObject, UITableViewDataSource, UITableViewD
         inTableView.reloadData()
     }
     
-    func selectedItemAtIndex(callback:@escaping (IndexPath) -> ()) {
+    func selectedItemAtIndex(callback:@escaping (Training) -> ()) {
         selectedCallback = callback
     }
     
@@ -37,7 +37,17 @@ class TrainingTableViewDataSource: NSObject, UITableViewDataSource, UITableViewD
         else{
             inTrainingViewCell.trainingAuthorLabel.text = "By : To Be Decided"
         }
-        inTrainingViewCell.trainingUpvotesNeedCountLabel.text = "\(inTrainingObj.minSignUpCount - inTrainingObj.signedUpCount) more to go"
+        
+        let upvotesNeeded = inTrainingObj.minSignUpCount - inTrainingObj.signedUpCount
+        
+        inTrainingViewCell.trainingUpvotesNeedCountLabel.text = "\(upvotesNeeded) more to go"
+        
+        let multiplier:Float = (Float)(inTrainingObj.signedUpCount)/(Float)(inTrainingObj.minSignUpCount)
+        
+        inTrainingViewCell.circularProgressView.value = CGFloat(multiplier*100)
+        inTrainingViewCell.circularProgressView.valueIndicator = "%"
+        inTrainingViewCell.courseImageView.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "compSc3.jpg")!)
+        
     }
     
     //MARK: UITableView Datasource & Delegates
@@ -69,7 +79,7 @@ class TrainingTableViewDataSource: NSObject, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                 
         if let callback = selectedCallback {
-            callback(indexPath)
+            callback(trainingDataSource[indexPath.row])
         }
         
     }

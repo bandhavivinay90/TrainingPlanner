@@ -10,6 +10,8 @@ import UIKit
 
 class Utility: NSObject {
 
+    
+    
     class func returnDeviceFrame() -> CGRect{
         let screenSize: CGRect = UIScreen.main.bounds
         return screenSize
@@ -22,7 +24,6 @@ class Utility: NSObject {
         })
         alertView.addAction(action)
         presentingController.present(alertView, animated: true, completion: nil)
-
     }
 }
 

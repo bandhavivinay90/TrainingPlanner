@@ -24,9 +24,14 @@ class TrainingListViewController: UIViewController {
         super.viewDidLoad()
         //        trainingTableView.isEditing = true
         // Do any additional setup after loading the view.
+        setInitialState()
         getTrainingsData()
         trainingTableView.allowsSelection = true
         
+    }
+    
+    func setInitialState(){
+        self.navigationItem.leftBarButtonItem = addLogoutButton()
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,24 +46,19 @@ class TrainingListViewController: UIViewController {
                 (trainings : [Training]) in
                 self.trainingTableViewDataSource = TrainingTableViewDataSource(inTableView: self.trainingTableView, inDataSource: trainings)
                 
-                self.trainingTableViewDataSource?.selectedItemAtIndex(callback: {
-                    indexPath in
-                    self.hidesBottomBarWhenPushed = true
-                    
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    
-                    let trainingDetailsViewController = storyboard.instantiateViewController(withIdentifier:"TrainingDetail") as! TrainingDetailViewController
-                    self.navigationController?.pushViewController(trainingDetailsViewController, animated: true)
-                    
-                })
+                //Define the callback here ...
                 
+                self.trainingTableViewDataSource?.selectedItemAtIndex(callback: {
+                    inTrainingObject in
+                    self.hidesBottomBarWhenPushed = true
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let trainingDetailsViewController = storyboard.instantiateViewController(withIdentifier:"TrainingDetail") as! TrainingDetailViewController
+                    trainingDetailsViewController.trainingObj = inTrainingObject
+                    self.navigationController?.pushViewController(trainingDetailsViewController, animated: true)
+                })
         })
         
     }
-    
-    //    func reloadTableData(){
-    //    }
-    
     /*
      // MARK: - Navigation
      

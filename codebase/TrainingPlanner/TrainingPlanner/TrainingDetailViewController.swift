@@ -11,14 +11,38 @@ import UIKit
 class TrainingDetailViewController: UIViewController {
 
     @IBOutlet weak var trainingDescriptionLabel:UILabel!
+    @IBOutlet weak var authorDescriptionLabel:UILabel!
+    @IBOutlet weak var trainingDurationLabel:UILabel!
+    @IBOutlet weak var authorNameLabel:UILabel!
+    @IBOutlet weak var trainingAuthorLabel:UILabel!
+    
+    var trainingObj:Training!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setInitialState()
         // Do any additional setup after loading the view.
+    }
+    
+    func setInitialState(){
         
-        trainingDescriptionLabel.text = "afjkas dsalkdlask dlaslaldklas kdlsa d"
-
+        guard let trainingId = trainingObj.trainingId else{
+            return
+        }
+        
+        GetTrainingRequest(authorizationFlag:true, inTrainingId: trainingId).getTrainingDetail(
+            { (trainingDictionary : [String:AnyObject]) in
+                
+                print("Get Training Response : \(trainingDictionary)")
+                self.trainingObj.update(dict: trainingDictionary)
+                self.updateView()
+                
+        },
+            failure:
+            {
+                (error : Error?) in
+        })
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,7 +53,17 @@ class TrainingDetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
-
+    
+    func updateView(){
+        
+        trainingDescriptionLabel.text = trainingObj.trainingDescription
+        
+        authorNameLabel.text = trainingObj.authorTitle
+        authorDescriptionLabel.text = trainingObj.authorDescription
+        trainingDurationLabel.text = "\(trainingObj.trainingMinutes!) min"
+        
+    }
+    
     /*
     // MARK: - Navigation
 

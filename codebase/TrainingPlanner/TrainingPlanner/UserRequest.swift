@@ -20,6 +20,11 @@ class UserRequest: NSObject {
         request = AlamofireManager.sharedInstance.request(apiUrl,method: .post,parameters: parameters,encoding: URLEncoding.httpBody)
     }
     
+    override init(){
+        apiUrl += Constants.Network.logoutUserURL
+        request = AlamofireManager.sharedInstance.request(apiUrl)
+    }
+    
     
     func signIn(_ success: @escaping (User) -> Void, failure: @escaping (Error?) -> Void) {
         
@@ -112,6 +117,34 @@ class UserRequest: NSObject {
                     print(response.error!)
                     failure(response.error!)
                 }
+        }
+        request.resume()
+    }
+    
+    func signOut(_ success: @escaping () -> Void, failure: @escaping (Error?) -> Void){
+        
+        request.response{
+            response in
+            
+            if response.error == nil
+            {
+                let statusCode = response.response?.statusCode
+                
+                if(statusCode == 200){
+                    success()
+                }
+                else{
+                    print(response)
+                    //                        let responseString = String(data: response.data!, encoding: String.Encoding.utf8)
+                    //                        print(responseString)
+                }
+                
+            }
+            else
+            {
+                print(response.error!)
+                failure(response.error!)
+            }
         }
         request.resume()
     }

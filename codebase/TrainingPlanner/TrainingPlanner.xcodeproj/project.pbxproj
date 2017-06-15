@@ -10,8 +10,6 @@
 		9FD5980B4DA367F23E312E4B /* Pods_TrainingPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F27A33AE598D50281025A50 /* Pods_TrainingPlanner.framework */; };
 		C15012A01ED30205001E3062 /* TrainingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C150129F1ED30205001E3062 /* TrainingListViewController.swift */; };
 		C15012A21ED30242001E3062 /* CreateTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15012A11ED30242001E3062 /* CreateTrainingViewController.swift */; };
-		C15012A41ED303D3001E3062 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15012A31ED303D3001E3062 /* FirebaseManager.swift */; };
-		C15828931EDC0A66008F5FBE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15828921EDC0A66008F5FBE /* NetworkManager.swift */; };
 		C15828951EDC0AB5008F5FBE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15828941EDC0AB5008F5FBE /* Reachability.swift */; };
 		C158289C1EDFF988008F5FBE /* TrainingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C158289B1EDFF988008F5FBE /* TrainingDetailViewController.swift */; };
 		C158289F1EE023AA008F5FBE /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C158289E1EE023AA008F5FBE /* MyProfileViewController.swift */; };
@@ -36,6 +34,9 @@
 		C1CBEEB71ECDB7FF006967D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1CBEEB61ECDB7FF006967D8 /* GoogleService-Info.plist */; };
 		C1DA31151EEE899B00F1FA7F /* TrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA31141EEE899B00F1FA7F /* TrainingViewModel.swift */; };
 		C1DA31171EEED6E800F1FA7F /* TrainingTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA31161EEED6E800F1FA7F /* TrainingTableViewDataSource.swift */; };
+		C1DA31191EF12BE700F1FA7F /* GetTrainingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA31181EF12BE700F1FA7F /* GetTrainingRequest.swift */; };
+		C1DA311B1EF12C3900F1FA7F /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA311A1EF12C3900F1FA7F /* RequestBuilder.swift */; };
+		C1DA311D1EF17D6600F1FA7F /* UIViewController+BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA311C1EF17D6600F1FA7F /* UIViewController+BarButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +61,6 @@
 		4F27A33AE598D50281025A50 /* Pods_TrainingPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrainingPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C150129F1ED30205001E3062 /* TrainingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingListViewController.swift; sourceTree = "<group>"; };
 		C15012A11ED30242001E3062 /* CreateTrainingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTrainingViewController.swift; sourceTree = "<group>"; };
-		C15012A31ED303D3001E3062 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
-		C15828921EDC0A66008F5FBE /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C15828941EDC0AB5008F5FBE /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		C158289B1EDFF988008F5FBE /* TrainingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingDetailViewController.swift; sourceTree = "<group>"; };
 		C158289E1EE023AA008F5FBE /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +91,9 @@
 		C1CBEEB61ECDB7FF006967D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C1DA31141EEE899B00F1FA7F /* TrainingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingViewModel.swift; sourceTree = "<group>"; };
 		C1DA31161EEED6E800F1FA7F /* TrainingTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingTableViewDataSource.swift; sourceTree = "<group>"; };
+		C1DA31181EF12BE700F1FA7F /* GetTrainingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTrainingRequest.swift; sourceTree = "<group>"; };
+		C1DA311A1EF12C3900F1FA7F /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		C1DA311C1EF17D6600F1FA7F /* UIViewController+BarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+BarButton.swift"; sourceTree = "<group>"; };
 		FF3B3EEFBAE7F7F86A1B0DD7 /* Pods-TrainingPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainingPlanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrainingPlanner/Pods-TrainingPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,9 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				C15828C61EE936C4008F5FBE /* Extensions */,
-				C15828921EDC0A66008F5FBE /* NetworkManager.swift */,
 				C15828941EDC0AB5008F5FBE /* Reachability.swift */,
-				C15012A31ED303D3001E3062 /* FirebaseManager.swift */,
 				C15828A71EE7DA4E008F5FBE /* Utility.swift */,
 				C15828B01EE7E548008F5FBE /* Constants.swift */,
 				C15828B21EE7E9D0008F5FBE /* AlamofireManager.swift */,
@@ -197,6 +197,8 @@
 			children = (
 				C15828BA1EE7F31F008F5FBE /* UserRequest.swift */,
 				C15828CD1EEABCE0008F5FBE /* GetTrainingsRequest.swift */,
+				C1DA31181EF12BE700F1FA7F /* GetTrainingRequest.swift */,
+				C1DA311A1EF12C3900F1FA7F /* RequestBuilder.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				C15828C71EE936EB008F5FBE /* String+Validation.swift */,
+				C1DA311C1EF17D6600F1FA7F /* UIViewController+BarButton.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -461,13 +464,14 @@
 				C15012A21ED30242001E3062 /* CreateTrainingViewController.swift in Sources */,
 				C1CBEE8B1ECDB6F8006967D8 /* LoginViewController.swift in Sources */,
 				C158289F1EE023AA008F5FBE /* MyProfileViewController.swift in Sources */,
-				C15012A41ED303D3001E3062 /* FirebaseManager.swift in Sources */,
 				C15828BD1EE7F3EB008F5FBE /* User.swift in Sources */,
 				C1DA31151EEE899B00F1FA7F /* TrainingViewModel.swift in Sources */,
-				C15828931EDC0A66008F5FBE /* NetworkManager.swift in Sources */,
 				C15828D01EEABD2E008F5FBE /* Training.swift in Sources */,
 				C15828C81EE936EB008F5FBE /* String+Validation.swift in Sources */,
 				C15828B11EE7E548008F5FBE /* Constants.swift in Sources */,
+				C1DA311D1EF17D6600F1FA7F /* UIViewController+BarButton.swift in Sources */,
+				C1DA31191EF12BE700F1FA7F /* GetTrainingRequest.swift in Sources */,
+				C1DA311B1EF12C3900F1FA7F /* RequestBuilder.swift in Sources */,
 				C15828B61EE7ED43008F5FBE /* LoginViewModel.swift in Sources */,
 				C15828951EDC0AB5008F5FBE /* Reachability.swift in Sources */,
 				C15828A81EE7DA4E008F5FBE /* Utility.swift in Sources */,

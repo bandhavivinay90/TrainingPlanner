@@ -110,7 +110,7 @@ exports.signIn = functions.https.onRequest((request, response) => {
       console.log("Entered inside error")
       var errorCode = error.code;
       var errorMessage = error.message;
-      console.log("Error recieved " + errorMessage);
+      console.log("Error recieved " + errorMessage)
       response.status(errorCode).send(errorMessage)
     })
 
@@ -122,13 +122,24 @@ exports.signIn = functions.https.onRequest((request, response) => {
 
   }).catch(function (error) {
     // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
+    var errorCode = error.code
+    var errorMessage = error.message
     // ...
-    console.log("Error recieved " + errorMessage);
-    response.status(errorCode).send("Error occurred");
+    console.log("Error recieved " + errorMessage)
+    response.status(errorCode).send("Error occurred")
   });
 });
+
+
+exports.signOut = functions.https.onRequest((request, response) => {
+  firebase.auth().signOut().then(function () {
+    console.log('Signed Out')
+    response.status(200).send()
+  }, function (error) {
+    response.status(401).send()
+    console.error('Sign Out Error', error)
+  })
+})
 
 const isLoggedIn = (token, callback) => {
   console.log("Method called with token " + token)
@@ -148,7 +159,6 @@ const isLoggedIn = (token, callback) => {
     callback(false)
     // return false
   })
-  return isLoggedInFlag
 }
 
 // const validateFirebaseIdToken = (req, res, next) => {
@@ -184,15 +194,17 @@ const isLoggedIn = (token, callback) => {
 //   });
 // };
 
-
-exports.getTrainings = functions.https.onRequest((request, response) => {
+exports.getTraining = functions.https.onRequest((request, response) => {
   console.log("Printing the token " + request.headers.authorization)
-  console.log("After splitting the Bearer " + request.headers.authorization.split('Bearer ')[1])
+  console.log("After splitting the Bearer >>" + request.headers.authorization.split('Bearer ')[1])
+  //Get the training id to fetch the details ...
+  var trainingID = request.query.trainingId
+  console.log("Printing training id " + trainingID)
 
   isLoggedIn(request.headers.authorization.split('Bearer ')[1], function (returnValue) {
     console.log("Executing with value " + returnValue)
     if (returnValue == true) {
-      var rootRef = admin.database().ref("/trainings");
+      var rootRef = admin.database().ref("/training_detail/" + trainingID)
       // return event.data.val();
       // rootRef.once("value", function(data) {
       //   // do some stuff once
@@ -206,38 +218,63 @@ exports.getTrainings = functions.https.onRequest((request, response) => {
       // });
 
       rootRef.on("value", function (snapshot) {
-        console.log("Priniting objects ..." + snapshot);
-
-        //Build an array and add each training object as a dictionary ...
-        var trainingsArray = []
-          snapshot.forEach(function (childSnapshot) {
-            console.log("Inside for each"+snapshot)
-            var snapshotKey = childSnapshot.key;
-            // console.log(snapshotKey)
-            var childData = childSnapshot.val();
-            childData["trainingId"] = snapshotKey
-            // console.log(childData)
-            // console.log({key:childData})
-            // var trainingDictionary = {}
-            // trainingDictionary[snapshotKey] = childData
-            trainingsArray.push(childData)
-
-            // trainingsArray.push(childData)
-          });
-        console.log("Training Array "+trainingsArray)
-
-        response.status(200).send(trainingsArray)
+        console.log("Priniting objects ..." + snapshot)
+        response.status(200).send(snapshot.val())
       }, function (error) {
-        console.log("Error: " + error.code);
-      });
+        console.log("Error: " + error.code)
+      })
     }
     else {
       response.status(401).send("Permission Denied. unauthorised access")
     }
-  });
+  })
 
 
+})
 
 
-});
+exports.getTrainings = functions.https.onRequest((request, response) => {
+  console.log("Printing the token " + request.headers.authorization)
+  console.log("After splitting the Bearer " + request.headers.authorization.split('Bearer ')[1])
+
+  isLoggedIn(request.headers.authorization.split('Bearer ')[1], function (returnValue) {
+    console.log("Executing with value " + returnValue)
+    if (returnValue == true) {
+      var rootRef = admin.database().ref("/trainings")
+      // return event.data.val();
+      // rootRef.once("value", function(data) {
+      //   // do some stuff once
+      //   request.send(data)
+      // });
+
+      // rootRef.once('value').then(function(snapshot) {
+      //   var username = snapshot.val();
+      //   // ...
+      //   request.send(username)
+      // });
+
+      rootRef.on("value", function (snapshot) {
+        console.log("Priniting objects ..." + snapshot)
+
+        //Build an array and add each training object as a dictionary ...
+        var trainingsArray = []
+        snapshot.forEach(function (childSnapshot) {
+          console.log("Inside for each" + snapshot)
+          var snapshotKey = childSnapshot.key
+          var childData = childSnapshot.val()
+          trainingsArray.push(childData)
+        });
+        console.log("Training Array " + trainingsArray)
+
+        response.status(200).send(trainingsArray)
+      }, function (error) {
+        console.log("Error: " + error.code)
+      })
+    }
+    else {
+      response.status(401).send("Permission Denied. unauthorised access")
+    }
+  })
+
+})
 
