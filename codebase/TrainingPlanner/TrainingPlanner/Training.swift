@@ -23,11 +23,15 @@ class Training: NSObject {
     var authorTitle: String?
     var authorDescription: String?
     
-    var category: String!
+    var trainingCategory: String!
     var signedUpCount: Int!
     var trainingMinutes: Int?
     var isSuggested:Bool!
     var minSignUpCount:Int!
+    
+    override init(){
+        
+    }
     
     init(dict: [String : AnyObject])
     {
@@ -35,7 +39,7 @@ class Training: NSObject {
         self.trainingId = dict["trainingId"] as? String
         self.trainingTitle = dict["trainingTitle"] as? String
         self.authorTitle = dict["author"] as? String
-        self.category = dict["category"] as? String
+        self.trainingCategory = dict["trainingCategory"] as? String
         self.signedUpCount = dict["signedUpCount"] as? Int
         self.minSignUpCount = dict["minSignUpCount"] as? Int
         self.suggestedByTitle = dict["suggestedBy"] as? String
@@ -52,5 +56,18 @@ class Training: NSObject {
         
     }
     
+    
+    func toDictionary() -> [String:String]{
+        
+        var trainingDict = [String : String]()
+
+        trainingDict["trainingTitle"] = self.trainingTitle
+        trainingDict["trainingCategory"] = self.trainingCategory
+        trainingDict["minSignUpCount"] = String(self.minSignUpCount)
+        trainingDict["description"] = self.trainingDescription
+        
+        return trainingDict
+        
+    }
     
 }

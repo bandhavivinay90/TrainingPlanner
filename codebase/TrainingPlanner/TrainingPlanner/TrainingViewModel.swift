@@ -14,7 +14,7 @@ class TrainingViewModel: NSObject {
         
         //Adding the flag in View Model to tell the request object class builder about if authorization is needed or not, because the rules might change from the backend system and trainings list API can be made available without any authorization ...
         
-        GetTrainingsRequest(authorizationFlag:true).getTrainings(
+        GetTrainingsRequest().getTrainings(
             { (trainings : [Training]) in
                 
                 //New user created ...

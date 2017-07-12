@@ -25,7 +25,7 @@ class TrainingListViewController: UIViewController {
         //        trainingTableView.isEditing = true
         // Do any additional setup after loading the view.
         setInitialState()
-        getTrainingsData()
+       // getTrainingsData()
         trainingTableView.allowsSelection = true
         
     }

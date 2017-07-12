@@ -30,7 +30,7 @@ class TrainingDetailViewController: UIViewController {
             return
         }
         
-        GetTrainingRequest(authorizationFlag:true, inTrainingId: trainingId).getTrainingDetail(
+        GetTrainingRequest(inTrainingId: trainingId).getTrainingDetail(
             { (trainingDictionary : [String:AnyObject]) in
                 
                 print("Get Training Response : \(trainingDictionary)")

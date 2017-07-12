@@ -12,12 +12,18 @@ import UIKit
 
 class GetTrainingRequest: RequestBuilder {
     
+    var request: DataRequest!
+
     var apiUrl: String = AlamofireManager.sharedInstance.apiURLString
     
-    init(authorizationFlag:Bool,inTrainingId:String) {
+    init(inTrainingId:String) {
+        super.init()
         apiUrl += Constants.Network.getTrainingURL
         let parameters = ["trainingId":inTrainingId]
-        super.init(authorizationFlag: authorizationFlag,inURL: apiUrl,inParameters:parameters)
+        
+        request = sessionManager.request(apiUrl, parameters: parameters)
+        
+//        super.init(authorizationFlag: authorizationFlag,inURL: apiUrl,inParameters:parameters,requestType:.get)
     }
     
     func getTrainingDetail(_ success: @escaping ([String:AnyObject]) -> Void, failure: @escaping (Error?) -> Void) {

@@ -15,6 +15,7 @@ struct Constants {
         static let registrationURL = "register"
         static let getTrainingsURL = "getTrainings"
         static let getTrainingURL = "getTraining"
+        static let newTrainingURL = "createTraining"
 //        static let signInURL = "signIn"
 //        static let signInURL = "signIn"
     }

@@ -37,6 +37,7 @@
 		C1DA31191EF12BE700F1FA7F /* GetTrainingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA31181EF12BE700F1FA7F /* GetTrainingRequest.swift */; };
 		C1DA311B1EF12C3900F1FA7F /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA311A1EF12C3900F1FA7F /* RequestBuilder.swift */; };
 		C1DA311D1EF17D6600F1FA7F /* UIViewController+BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA311C1EF17D6600F1FA7F /* UIViewController+BarButton.swift */; };
+		C1DA311F1EF2CE8A00F1FA7F /* NewTrainingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA311E1EF2CE8A00F1FA7F /* NewTrainingRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		C1DA31181EF12BE700F1FA7F /* GetTrainingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTrainingRequest.swift; sourceTree = "<group>"; };
 		C1DA311A1EF12C3900F1FA7F /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		C1DA311C1EF17D6600F1FA7F /* UIViewController+BarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+BarButton.swift"; sourceTree = "<group>"; };
+		C1DA311E1EF2CE8A00F1FA7F /* NewTrainingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTrainingRequest.swift; sourceTree = "<group>"; };
 		FF3B3EEFBAE7F7F86A1B0DD7 /* Pods-TrainingPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainingPlanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrainingPlanner/Pods-TrainingPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +201,7 @@
 				C15828CD1EEABCE0008F5FBE /* GetTrainingsRequest.swift */,
 				C1DA31181EF12BE700F1FA7F /* GetTrainingRequest.swift */,
 				C1DA311A1EF12C3900F1FA7F /* RequestBuilder.swift */,
+				C1DA311E1EF2CE8A00F1FA7F /* NewTrainingRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				C15828BD1EE7F3EB008F5FBE /* User.swift in Sources */,
 				C1DA31151EEE899B00F1FA7F /* TrainingViewModel.swift in Sources */,
 				C15828D01EEABD2E008F5FBE /* Training.swift in Sources */,
+				C1DA311F1EF2CE8A00F1FA7F /* NewTrainingRequest.swift in Sources */,
 				C15828C81EE936EB008F5FBE /* String+Validation.swift in Sources */,
 				C15828B11EE7E548008F5FBE /* Constants.swift in Sources */,
 				C1DA311D1EF17D6600F1FA7F /* UIViewController+BarButton.swift in Sources */,

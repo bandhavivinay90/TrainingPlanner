@@ -13,14 +13,15 @@ import SwiftKeychainWrapper
 
 class GetTrainingsRequest: RequestBuilder {
     
+    var request: DataRequest!
+
     var apiUrl: String = AlamofireManager.sharedInstance.apiURLString
     
-    init(authorizationFlag:Bool) {
-        
+    override init() {
+        super.init()
         apiUrl += Constants.Network.getTrainingsURL
         
-        super.init(authorizationFlag: authorizationFlag,inURL: apiUrl)
-
+        request = sessionManager.request(apiUrl)
     }
     
     func getTrainings(_ success: @escaping ([Training]) -> Void, failure: @escaping (Error?) -> Void) {
@@ -39,7 +40,6 @@ class GetTrainingsRequest: RequestBuilder {
                         print("SignInResponse: \(responseString!)")
                         let JSON = try? JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.allowFragments)
                         
-//                        let root = JSON as! [String : AnyObject]
                         let appArray = JSON as! [[String : AnyObject]]
                         var apps = [Training]()
                         for item in appArray

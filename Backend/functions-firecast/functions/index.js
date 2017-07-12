@@ -1,4 +1,7 @@
+
+
 var functions = require('firebase-functions');
+var TrainingModule = require('./Training/TrainingModule');
 
 // Import and initialize the Firebase Admin SDK.
 const admin = require('firebase-admin');
@@ -146,53 +149,60 @@ const isLoggedIn = (token, callback) => {
   const tokenVerificationFlag = admin.auth().verifyIdToken(token)
 
   const isLoggedInFlag = tokenVerificationFlag.then(function (decodedToken) {
-    console.log("Inside success")
+    console.log("Inside success for callback"+callback)
     // var uid = decodedToken.uid;
     // ...
     console.log(token)
     console.log(decodedToken)
     callback(true)
-    // return true
+    return
   }).catch(function (error) {
     // Handle error
-    console.log("Inside error")
+    console.log("Recieved error for callback"+callback)
     callback(false)
     // return false
   })
 }
 
-// const validateFirebaseIdToken = (req, res, next) => {
-//   console.log('Check if request is authorized with Firebase ID token');
+// exports.createTraining = functions.https.onRequest((request, response) => {
+//   console.log("Printing the token " + request.headers.authorization)
+//   console.log("After splitting the Bearer >>" + request.headers.authorization.split('Bearer ')[1])
 
-//   if ((!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) &&
-//       !req.cookies.__session) {
-//     console.error('No Firebase ID token was passed as a Bearer token in the Authorization header.',
-//         'Make sure you authorize your request by providing the following HTTP header:',
-//         'Authorization: Bearer <Firebase ID Token>',
-//         'or by passing a "__session" cookie.');
-//     res.status(403).send('Unauthorized');
-//     return;
-//   }
+//   console.log("Printing header")
+//   console.log("Printing header "+request.headers.authorization)
+//   isLoggedIn(request.headers.authorization.split('Bearer ')[1], function (returnValue) {
+//     console.log("Executing with value " + returnValue)
+//     if (returnValue == true) {
+      // console.log("from index.js "+request.body.trainingTitle)
+      // var trainingModule = new TrainingModule(request.body)
+      // response.status(200).send(trainingModule)
+//     }
+//     else {
+//       response.status(401).send("Permission Denied. unauthorised access")
+//     }
+//   })
+// })
 
-//   let idToken;
-//   if (req.headers.authorization && req.headers.authorization.startsWith('Bearer ')) {
-//     console.log('Found "Authorization" header');
-//     // Read the ID Token from the Authorization header.
-//     idToken = req.headers.authorization.split('Bearer ')[1];
-//   } else {
-//     console.log('Found "__session" cookie');
-//     // Read the ID Token from cookie.
-//     idToken = req.cookies.__session;
-//   }
-//   admin.auth().verifyIdToken(idToken).then(decodedIdToken => {
-//     console.log('ID Token correctly decoded', decodedIdToken);
-//     req.user = decodedIdToken;
-//     next();
-//   }).catch(error => {
-//     console.error('Error while verifying Firebase ID token:', error);
-//     res.status(403).send('Unauthorized');
-//   });
-// };
+
+exports.createTraining = functions.https.onRequest((request, response) => {
+
+  isLoggedIn(request.headers.authorization.split('Bearer ')[1], function (returnValue) {
+    console.log("Executing with value " + returnValue)
+    if (returnValue == true) {
+      // console.log("from index.js "+request.body.trainingTitle)
+      var trainingModule = new TrainingModule(admin)
+      trainingModule.newTraining(request.body,function(trainingID,status){
+        console.log("Inside createTraining callback"+trainingID+status)
+        response.status(status).send(trainingID)
+      })
+      
+    }
+    else {
+      response.status(401).send("Permission Denied. unauthorised access")
+    }
+  })
+
+})
 
 exports.getTraining = functions.https.onRequest((request, response) => {
   console.log("Printing the token " + request.headers.authorization)
@@ -205,18 +215,6 @@ exports.getTraining = functions.https.onRequest((request, response) => {
     console.log("Executing with value " + returnValue)
     if (returnValue == true) {
       var rootRef = admin.database().ref("/training_detail/" + trainingID)
-      // return event.data.val();
-      // rootRef.once("value", function(data) {
-      //   // do some stuff once
-      //   request.send(data)
-      // });
-
-      // rootRef.once('value').then(function(snapshot) {
-      //   var username = snapshot.val();
-      //   // ...
-      //   request.send(username)
-      // });
-
       rootRef.on("value", function (snapshot) {
         console.log("Priniting objects ..." + snapshot)
         response.status(200).send(snapshot.val())
@@ -241,18 +239,6 @@ exports.getTrainings = functions.https.onRequest((request, response) => {
     console.log("Executing with value " + returnValue)
     if (returnValue == true) {
       var rootRef = admin.database().ref("/trainings")
-      // return event.data.val();
-      // rootRef.once("value", function(data) {
-      //   // do some stuff once
-      //   request.send(data)
-      // });
-
-      // rootRef.once('value').then(function(snapshot) {
-      //   var username = snapshot.val();
-      //   // ...
-      //   request.send(username)
-      // });
-
       rootRef.on("value", function (snapshot) {
         console.log("Priniting objects ..." + snapshot)
 

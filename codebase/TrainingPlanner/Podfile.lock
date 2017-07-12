@@ -6,7 +6,8 @@ PODS:
   - UICircularProgressRing (1.4.3)
 
 DEPENDENCIES:
-  - AlamofireImage (~> 3.1)
+  - Alamofire (~> 4.4)
+  - AlamofireImage
   - SwiftKeychainWrapper
   - UICircularProgressRing
 
@@ -16,6 +17,6 @@ SPEC CHECKSUMS:
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
   UICircularProgressRing: f90123562efc555f861f9955384a3450e81e82c0
 
-PODFILE CHECKSUM: 1e377372655fa10d27b2cd9e04708f7e8e7d1fc7
+PODFILE CHECKSUM: 28424032987241a6af1fe68029da2c1aab147b75
 
 COCOAPODS: 1.2.1

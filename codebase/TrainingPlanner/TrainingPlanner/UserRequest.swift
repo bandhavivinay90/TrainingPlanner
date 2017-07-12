@@ -17,6 +17,7 @@ class UserRequest: NSObject {
     
     init(parameters:[String:String]) {
         apiUrl += Constants.Network.loginUserURL
+        print(parameters)
         request = AlamofireManager.sharedInstance.request(apiUrl,method: .post,parameters: parameters,encoding: URLEncoding.httpBody)
     }
     

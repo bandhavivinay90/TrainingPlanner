@@ -10,43 +10,59 @@ import SwiftKeychainWrapper
 import Foundation
 import Alamofire
 
-class RequestBuilder: NSObject {
+class RequestBuilder: RequestAdapter {
     
-    var request: DataRequest!
+    var sessionManager:SessionManager!
     
-    private class func makeAuthorizationHeader() -> [String:String]{
-        //Make Header Dictionary :
+    
+    func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
+        var urlRequest = urlRequest
+        
         let accessTokenString:String = KeychainWrapper.standard.string(forKey: "accessToken")!
+
+        urlRequest.setValue("Bearer " + accessTokenString, forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("public, max-age=300, s-maxage=600", forHTTPHeaderField: "Cache-Control")
         
-        let headers = [
-            "Authorization": "Bearer \(accessTokenString)",
-            "Content-Type": "application/json"
-//            "Cache-Control": "public, max-age=300, s-maxage=600"
-        ]
-        return headers
+        return urlRequest
     }
     
-    init(authorizationFlag:Bool,inURL:String){
+    
+    init(){
         
-        if (authorizationFlag){
-            
-            request = AlamofireManager.sharedInstance.request(inURL,headers:RequestBuilder.makeAuthorizationHeader())
-        }
-        else{
-            request = AlamofireManager.sharedInstance.request(inURL)
-        }
+        sessionManager = SessionManager()
+        sessionManager.adapter = self
         
     }
     
-    init(authorizationFlag:Bool,inURL:String,inParameters:[String:Any]){
-        
-        if (authorizationFlag){
-            request = AlamofireManager.sharedInstance.request(inURL,parameters:inParameters,headers:RequestBuilder.makeAuthorizationHeader())
-        }
-        else{
-            request = AlamofireManager.sharedInstance.request(inURL,parameters:inParameters)
-        }
-        
-    }
+  
+    
+//    init(authorizationFlag:Bool,inURL:String){
+//        
+//        if (authorizationFlag){
+//            
+//            request = AlamofireManager.sharedInstance.request(inURL,headers:RequestBuilder.makeAuthorizationHeader())
+//        }
+//        else{
+//            request = AlamofireManager.sharedInstance.request(inURL)
+//        }
+//        
+//    }
+//    
+//    init(authorizationFlag:Bool,inURL:String,inParameters:[String:String],requestType:HTTPMethod){
+//        
+//        var headers = [String:String]()
+//        if(authorizationFlag){
+//            headers = RequestBuilder.makeAuthorizationHeader()
+//        }
+//        
+//        if (requestType == .get){
+//            request = AlamofireManager.sharedInstance.request(inURL,parameters:inParameters,headers:headers)
+//        }
+//        else{
+//            request = AlamofireManager.sharedInstance.request(inURL,method:.post,parameters:inParameters,encoding: URLEncoding.httpBody)
+//        }
+    
+//    }
     
 }

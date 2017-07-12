@@ -43,6 +43,18 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
+//        if let data = String(describing: tempTraining).data(using: .utf8) {
+//            do {
+//                let test:[String:Any] =  try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+//                print(test)
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//        }
+
+        
+        
         setInitialState()
         
     }
